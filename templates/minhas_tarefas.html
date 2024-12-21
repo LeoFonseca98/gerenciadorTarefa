@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+</head>
+<body>
+    <h1>LISTA DE TAREFAS</h1>
+
+    <table>
+        <thead>
+            <tr style="border: 2px solid black">
+                <th>Descrição</th>
+                <th>Status</th>
+                <th>Data Limite</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarefa in tarefas %}
+              <tr>
+                <td>{{ tarefa.descricao }}</td>
+                <td>{{ tarefa.status }}</td>
+                <td>{{ tarefa.data_limite }}</td>
+                <td>
+                    <a href="/editar_tarefa/{{ tarefa.id }}"><button>Editar</button></a>
+                    <a href="/excluir_tarefa/{{ tarefa.id }}"><button>Excluir</button></a>
+                </td>
+              </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    {% if tarefas|length == 0 %}
+        <p>Não há tarefas para exibir.</p>
+    {% endif %}
+</body>
+</html>

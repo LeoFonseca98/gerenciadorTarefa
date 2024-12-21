@@ -8,12 +8,16 @@
 <body>
     <h1>Cadastro de Usuários</h1>
 
-    <form action="/senha">
+    <form  action="/inserir_usuario", method="POST">
         <label for="nome">Nome: </label>
-        <input type="text" name="nome" id="nome"><br>
+        <input type="text" name="nome" id="nome" required><br>
         <label for="email">Email: </label>
-        <input type="email" name="email" id="email"><br>
-        <a href="/senha"><button>Seguir</button></a>
+        <input type="email" name="email" id="email" required><br>
+        <label for="senha">Senha: </label>
+        <input type="password" name="senha" id="senha" required><br>
+        <label for="confirm_senha">Confirme a senha: </label>
+        <input type="password" name="confirm_senha" id="confirm_senha" required><br>
+        <button>Finalizar</button>
     </form>
 </body>
 </html>
